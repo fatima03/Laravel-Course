@@ -6,5 +6,8 @@ use Illuminate\Http\Request;
 
 class RoomsController extends Controller
 {
-    //
+    public function checkAvailableRooms()
+    {
+    	# code...
+    }
 }

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ReadOnlyBase extends Model
+class ReadOnlyBase 
 {
     //
     protected $titles_arry = [];

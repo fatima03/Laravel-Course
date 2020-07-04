@@ -13,7 +13,7 @@ class DummyServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        echo "Boot";
+        // echo "Boot";
     }
 
     /**
