@@ -8,6 +8,6 @@ class RoomsController extends Controller
 {
     public function checkAvailableRooms()
     {
-    	# code...
-    }
+    	return view('rooms/checkAvailableRooms');
+       }
 }
