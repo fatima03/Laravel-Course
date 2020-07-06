@@ -4,18 +4,18 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ReadOnlyBase 
+class ReadOnlyBase
 {
     //
-    protected $titles_arry = [];
+    protected $titles_array = [];
 
     public function all()
     {
-    	return $this->titles_arry;
+        return $this->titles_array;
     }
 
-    public function get ($id)
+    public function get( $id )
     {
-    	return $this->titles_arry[$i];
+        return $this->titles_array[$id];
     }
 }

@@ -6,13 +6,9 @@ use Illuminate\Http\Request;
 
 class ReservationsController extends Controller
 {
-	public function index()
-	{
-		return view('reservations/index');
-	}
-
+    //
     public function bookRoom()
     {
-    	return view('reservations/bookRoom');
+        return view('reservations/bookRoom');
     }
 }
