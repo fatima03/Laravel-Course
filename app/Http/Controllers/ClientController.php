@@ -29,6 +29,15 @@ class ClientController extends Controller
         return view('client/index', $data);
     }
 
+    public function export()
+    {
+        $data = [];
+
+        $data['clients'] = $this->client->all();
+        header(('Content-Disposition: attachement; filename=export.xls'));
+        return view('client/export', $data);
+    }
+
     public function newClient( Request $request, Client $client )
     {
         $data = [];
@@ -75,7 +84,7 @@ class ClientController extends Controller
             return view('client/create');
     }
 
-    public function show($client_id)
+    public function show($client_id, Request $request)
     {
         $data = [];
         $data['client_id'] = $client_id;
@@ -90,6 +99,8 @@ class ClientController extends Controller
         $data['city'] = $client_data->city;
         $data['state'] = $client_data->state;
         $data['email'] = $client_data->email;
+
+        $request->session()->put('last_updated', $client_data->name.' '.$client_data->last_name);
 
         return view('client/form', $data);
     }
