@@ -161,7 +161,10 @@ In the up() method define columns:<br>
 ` $table->foreign('client_id')->references('id')->on('client'); `<br>
 
 run:<br>
-` php artisan migrate `
+` php artisan migrate `<br>
+
+For reflecting changes in migration file:<br>
+`php artisan migrate:refresh`
 
 
 ## Eloquent 
@@ -242,4 +245,25 @@ Run seeders: <br>
 
 
 ## Socialite
+
+Run: <br>
+`composer require laravel/socialite`<br>
+
+In cofig->app.php:<br>
+	In Providers:<br>
+		`Laravel\Socialite\SocialiteServiceProvider::class,`<br>
+	In Alias:<br>
+		`'Socialite' => Laravel\Socialite\Facades\Socialite::class,`<br>
+
+In config->services.php: <br>
+	`'google' => [
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => env('GOOGLE_REDIRECT'),
+    ],`<br>
+
+In the .env file: <br>
+	GOOGLE_CLIENT_ID=...<br>
+	GOOGLE_CLIENT_SECRET=...<br>
+	GOOGLE_REDIRECT=http://localhost:8000/login/google/callback<br>
 
