@@ -267,3 +267,17 @@ In the .env file: <br>
 	GOOGLE_CLIENT_SECRET=...<br>
 	GOOGLE_REDIRECT=http://localhost:8000/login/google/callback<br>
 
+
+## Adding Bootstrap to project
+
+`composer require laravel\ui`
+`php artisan ui bootstrap`
+
+# Add project level css file
+	resources -> scss -> new file **_custom.scss**
+	in app.scss file:
+		`@import 'custom';`
+
+`npm install && npm run dev`
+In main header:
+	`<link href="{{asset('css/app.css')}}" rel="stylesheet">`
